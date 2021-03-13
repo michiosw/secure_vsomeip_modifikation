@@ -99,7 +99,7 @@ cd secure-vsomeip
 mkdir build
 cd build
 ```
-After successfully moving into the build folder you can now build the program. Therefore insert the before gained IP addresses. For this reason, container one or container two is assigned to either the MASTER or the WORKER. In the following command two dummy IP addresses are used. Pleas make sure to use the previous gained IP's. It is also possible to change the security by renaming confidentiality to either nosec or authentication. Remember to edit all upcoming commands incase you change the security.
+After successfully moving into the build folder you can now build the program. Therefore insert the before gained IP addresses. For this reason, container one or container two is assigned to either the MASTER or the WORKER. In the following command two dummy IP addresses are used. Please make sure to use the previous gained IP's. It is also possible to change the security by renaming confidentiality to either nosec or authentication. Remember to edit all upcoming commands incase you change the security.
 
 ```bash
 cmake .. -DCMAKE_BUILD_TYPE="Release" -DENABLE_SIGNAL_HANDLING=1 -DBENCH_IP_MASTER=192.168.192.2 -DBENCH_IP_SLAVE=192.168.192.3 -DCONFIGURATION_SECURITY_LEVEL=confidentiality
