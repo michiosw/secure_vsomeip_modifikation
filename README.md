@@ -31,7 +31,7 @@ git clone https://github.com/netgroup-polito/secure-vsomeip.git
 
 ## Installation and execution for remote client containers
 
-In order to use the remote connection, you have to redo step 2, 3 and change the name of the container. Now two containers are existing. A client and a service container. Now a Docker network needs to be created. In order to prevent an upcoming ssh password request during the benchmark, public keys are used. These need to be created in both containers:
+In order to use the remote connection, you have to redo step 2, 3 and change the name of the container. Now two containers are existing. A MASTER and a WORKER (SLAVE) container. Now a Docker network needs to be created. In order to prevent an upcoming ssh password request during the benchmark, public keys are used. These need to be created in both containers:
 
 ```bash
 service ssh enable
@@ -99,7 +99,7 @@ cd secure-vsomeip
 mkdir build
 cd build
 ```
-After successfully moving into the build folder you can now build the program. Therefore insert the before gained IP addresses. Therefore Container one or Container two will be assigned to either the MASTER or WORKER (SLAVE). In the following command two dummy IP addresses are used. Pleas make sure to use the previous gained IP's. It is also possible to change the security by renaming confidentiality to either nosec or authentication. Remember to edit all upcoming commands incase you change the security.
+After successfully moving into the build folder you can now build the program. Therefore insert the before gained IP addresses. Therefore Container one or Container two will be assigned to either the MASTER or WORKER. In the following command two dummy IP addresses are used. Pleas make sure to use the previous gained IP's. It is also possible to change the security by renaming confidentiality to either nosec or authentication. Remember to edit all upcoming commands incase you change the security.
 
 ```bash
 cmake .. -DCMAKE_BUILD_TYPE="Release" -DENABLE_SIGNAL_HANDLING=1 -DBENCH_IP_MASTER=192.168.192.2 -DBENCH_IP_SLAVE=192.168.192.3 -DCONFIGURATION_SECURITY_LEVEL=confidentiality
