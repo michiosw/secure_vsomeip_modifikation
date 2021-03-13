@@ -5,7 +5,7 @@ Certain parameters and configurations are modified. Each step necessary to execu
 ## Prerequisites
 
 Use [Docker](https://www.docker.com/products/docker-desktop) to create the Docker Image. <br/>
-After the successful installation of Docker, move to the folder your Dockerfile which can be found in this repository is located in.<br/>
+After the successful installation of Docker, move to the folder your Dockerfile (which can be found in this repository) is located in.<br/>
 
 1. Now the Docker Image can be built:
 
