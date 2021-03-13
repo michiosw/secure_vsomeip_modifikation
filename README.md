@@ -80,7 +80,7 @@ To guarantee the right assignment of the remote containers the IP address of eac
 docker inspect container_name
 ```
 
-Now we have to connect the two containers via ssh to accept the key-pair. This is done with:
+Now we have to connect the two containers via SSH to accept the key-pair. This is done with:
 
 CONTAINER 1:
 ```bash
