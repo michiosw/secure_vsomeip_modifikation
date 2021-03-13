@@ -116,7 +116,7 @@ mv benchmarks/conf benchmarks/conf-confidentiality
 ```
 
 After completing this step, the configuration files from the MASTER need to be copied to the WORKER.
-Copy the MASTER configuration and files to the same location on the WORKER using [scp](https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/). The required configurations and files are as follows:
+Copy the MASTER configuration and files to the same location on the WORKER using [SCP](https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/). The required configurations and files are as follows:
 
 ```bash
 /root/secure-vsomeip/build/benchmark/conf-confidentiality/bench_request_response_client_external.json
