@@ -29,9 +29,9 @@ docker exec -it container_name bash
 git clone https://github.com/netgroup-polito/secure-vsomeip.git
 ```
 
-## Installation for remote client containers
+## Installation and execution for remote client containers
 
-In order to use the remote connection, you have to redo step 2, 3 and change the name of the container. Now two containers are existing. One client and pne service container. Now a Docker network needs to be created. In order to prevent a upcoming ssh password request during the benchmark, public keys are used. These need to be created in both containers:
+In order to use the remote connection, you have to redo step 2, 3 and change the name of the container. Now two containers are existing. A client and a service container. Now a Docker network needs to be created. In order to prevent an upcoming ssh password request during the benchmark, public keys are used. These need to be created in both containers:
 
 ```bash
 service ssh enable
@@ -68,7 +68,7 @@ docker network connect svsomeip container_id_1
 docker network connect svsomeip container_id_2
 ```
 
-The different container ID's can be foud out with:
+The different container ID's can be found out with the help of:
 
 ```bash
 docker ps -aqf "name=containername"
@@ -92,14 +92,14 @@ CONTAINER 2:
 ssh <IP OF CONTAINER 1>
 ```
 
-The two gained IP addresses can now be used in order to identify the client and service container. To build the secure-vsomeip repository, the user has to create a build ordner in the secure-vsomeip folder and move into it. Both created containers have to follow below given steps in order to successfully execute the benchmark. This can be done by following commands:
+The two gained IP addresses can now be used in order to identify the client and service container. To create the secure-vsomeip repository, the user must create a build folder in the secure-vsomeip folder. Both created containers have to follow below given steps in order to successfully execute the benchmark. This can be done by following commands:
 
 ```bash
 cd secure-vsomeip
 mkdir build
 cd build
 ```
-After succesfully moving into the build folder you can now build the program. Therefore insert the before gained IP adresses. Therefore Container one or Container two will be assigned to either the MASTER or WORKER (SLAVE). In the following command two dummy IP addresses are used. Pleas make sure to use the previous gained IP's. It is also possible to change the security by renaming confidentiality to either nosec or authentication. Remember to edit all upcoming commands incase you change the security.
+After successfully moving into the build folder you can now build the program. Therefore insert the before gained IP addresses. Therefore Container one or Container two will be assigned to either the MASTER or WORKER (SLAVE). In the following command two dummy IP addresses are used. Pleas make sure to use the previous gained IP's. It is also possible to change the security by renaming confidentiality to either nosec or authentication. Remember to edit all upcoming commands incase you change the security.
 
 ```bash
 cmake .. -DCMAKE_BUILD_TYPE="Release" -DENABLE_SIGNAL_HANDLING=1 -DBENCH_IP_MASTER=192.168.192.2 -DBENCH_IP_SLAVE=192.168.192.3 -DCONFIGURATION_SECURITY_LEVEL=confidentiality
@@ -137,16 +137,16 @@ From there execute the runtime benchmark. You only have to execute this command 
 
 The log can be found in "/root/secure-vsomeip/build/benchmarks" and is called "log-confidentiality".
 
-## Installation for remote client containers
+## Installation and execution for local client containers
 
-To execute the benchmark script in one local container, several adjustments need to be made. The first step will create a build ordner in order to build the programm:
+To execute the benchmark script in one local container, several adjustments need to be made. The first step will create a build folder in order to build the program:
 
 ```bash
 cd secure-vsomeip
 mkdir build
 cd build
 ```
-After succesfully moving into the build folder you can now build the program. Therefore the IP addresses of the MASTER container needs to found out. This can be archieved with the help of:
+After successfully moving into the build folder you can now build the program. Therefore the IP addresses of the MASTER container needs to found out. This can be achieved with the help of:
 
 
 ```bash
