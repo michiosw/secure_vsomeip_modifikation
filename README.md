@@ -92,7 +92,7 @@ CONTAINER 2:
 ssh <IP OF CONTAINER 1>
 ```
 
-The two gained IP addresses can now be used in order to identify the client and service container. To create the secure-vsomeip repository, the user must create a build folder in the secure-vsomeip folder. Both created containers have to follow below given steps in order to successfully execute the benchmark. This can be done by following commands:
+The two gained IP addresses can now be used in order to identify the client and service container. To create the secure-vsomeip repository, the user must create a build folder in the secure-vsomeip folder. Both created containers have to follow below given steps in order to successfully install the secure-vsomeip and execute the benchmark. This can be done by following commands:
 
 ```bash
 cd secure-vsomeip
