@@ -129,7 +129,7 @@ The remote benchmark can now be started. Therefore navigate to:
 cd /root/secure-vsomeip/build/benchmarks
 ```
 
-From there execute the runtime benchmark. This will execute the ***request and response*** benchmark in synchronous and asynchronous mode. In addition the ***publish and subscribe*** benchmark is performed. It is only needed to execute this command in the MASTER container. The security level will be confidential with 10 iterations and 5000 synchronous messages as well as 2000 asynchronous messages:
+From there execute the runtime benchmark. This will execute the **request and response** benchmark in synchronous and asynchronous mode. In addition the **publish and subscribe** benchmark is performed. It is only needed to execute this command in the MASTER container. The security level will be confidential with 10 iterations and 5000 synchronous messages as well as 2000 asynchronous messages:
 
 ```bash
 ./run_runtime_protection_benchmarks.sh /root/secure-vsomeip/build/benchmarks .. conf-confidentiality log-confidentiality confidentiality 10 5000 2000
@@ -167,7 +167,7 @@ export LD_LIBRARY_PATH=/usr/local/lib/
 mv benchmarks/conf benchmarks/conf-confidentiality
 ```
 
-To finish the local benchmark setup, the master scripts of ***request and response*** as well as ***publish and subscribe*** need to be adjusted. Replace the content of:
+To finish the local benchmark setup, the master scripts of **request and response** as well as **publish and subscribe** need to be adjusted. Replace the content of:
 
 ```bash
 /root/secure-vsomeip/build/benchmarks/bench_request_response_master.sh
@@ -181,7 +181,7 @@ The remote benchmark can now be started. Therefore navigate to:
 cd /root/secure-vsomeip/build/benchmarks
 ```
 
-From there execute the runtime benchmark. You only have to execute this command in the MASTER container. The mode will be confidential with 10 iterations and 5000 synchronous messages as well as 2000 asynchronous messages:
+From there execute the local runtime benchmark. This will execute the **request and response** benchmark in synchronous and asynchronous mode. In addition the **publish and subscribe** benchmark is performed. The security level will be confidential with 10 iterations and 5000 synchronous messages as well as 2000 asynchronous messages:
 
 ```bash
 ./run_runtime_protection_benchmarks.sh /root/secure-vsomeip/build/benchmarks .. conf-confidentiality log-confidentiality confidentiality 10 5000 2000
