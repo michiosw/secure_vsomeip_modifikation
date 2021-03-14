@@ -99,7 +99,7 @@ cd secure-vsomeip
 mkdir build
 cd build
 ```
-After successfully moving into the build folder you can now build the program. Therefore insert the before gained IP addresses. For this reason, container one or container two is assigned to either the MASTER or the WORKER. In the following command two dummy IP addresses are used. Please make sure to use the previous gained IP's. It is also possible to change the security by renaming confidentiality to either nosec or authentication. Remember to edit all upcoming commands incase you change the security.
+After successfully moving into the build folder you can now build the program. Therefore, insert the before gained IP addresses. For this reason, container one or container two is assigned to either the MASTER or the WORKER. In the following command two dummy IP addresses are used. Please make sure to use the previous gained IP's. It is also possible to change the security by renaming confidentiality to either nosec or authentication. Remember to edit all upcoming commands incase you change the security.
 
 ```bash
 cmake .. -DCMAKE_BUILD_TYPE="Release" -DENABLE_SIGNAL_HANDLING=1 -DBENCH_IP_MASTER=192.168.192.2 -DBENCH_IP_SLAVE=192.168.192.3 -DCONFIGURATION_SECURITY_LEVEL=confidentiality
@@ -129,7 +129,7 @@ The remote benchmark can now be started. Therefore navigate to:
 cd /root/secure-vsomeip/build/benchmarks
 ```
 
-From there execute the runtime benchmark. You only have to execute this command in the MASTER container. The mode will be confidential with 10 iterations and 5000 synchronous messages as well as 2000 asynchronous messages:
+From there execute the runtime benchmark. This will execute the ***request and response*** benchmark in synchronous and asynchronous mode. In addition the ***publish and subscribe*** benchmark is performed. It is only needed to execute this command in the MASTER container. The security level will be confidential with 10 iterations and 5000 synchronous messages as well as 2000 asynchronous messages:
 
 ```bash
 ./run_runtime_protection_benchmarks.sh /root/secure-vsomeip/build/benchmarks .. conf-confidentiality log-confidentiality confidentiality 10 5000 2000
@@ -146,8 +146,7 @@ cd secure-vsomeip
 mkdir build
 cd build
 ```
-After successfully moving into the build folder you can now build the program. Therefore the IP addresses of the MASTER container needs to found out. This can be achieved with the help of:
-
+After successfully moving into the build folder you can now build the program. Therefore, the IP addresses of the MASTER container is needed. This IP can be obtained using this line of code:
 
 ```bash
 docker inspect container_name
@@ -168,7 +167,7 @@ export LD_LIBRARY_PATH=/usr/local/lib/
 mv benchmarks/conf benchmarks/conf-confidentiality
 ```
 
-To finish the local benchmark setup, the master scripts of request and response as well as publish and subscribe need to be adjusted. Replace the content of:
+To finish the local benchmark setup, the master scripts of ***request and response*** as well as ***publish and subscribe*** need to be adjusted. Replace the content of:
 
 ```bash
 /root/secure-vsomeip/build/benchmarks/bench_request_response_master.sh
